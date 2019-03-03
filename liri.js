@@ -89,42 +89,42 @@ if (process.argv[2] === "concert-this") {
 }
 //do-what-it-says: read random.txt file, retrieve the information
 } else if (process.argv[2] == 'do-what-it-says') {
-    // console.log('do what it says')
+    
     var fs = require("fs");
     //Read random.txt file
     fs.readFile("random.txt", "utf8", function (error, data) {
         if (error) {
             return console.log(error)
         }
-        // console.log(data);
-        //split the data from the random.txt file into two array items
-        var data;
-        data = data.split(","); 
-        var search = data[0]; //the command(spotify-this-song, concert-this, or movie-this)
-        var userInput = data[1]; //the thing the user is searching for (song title, band name, or movie title)
-        // console.log(search + userInput);
+        
+    //split the data from the random.txt file into two array items
+    var data;
+    data = data.split(","); 
+    var search = data[0]; //the command(spotify-this-song, concert-this, or movie-this)
+    var userInput = data[1]; //the thing the user is searching for (song title, band name, or movie title)
+    // console.log(search + userInput);
 
-        if (search == "spotify-this-song") {
-            // console.log("this works");
-            spotify.search({ type: 'track', query: userInput, limit: 1 }, function (err, data) {
-                if (err) {
-                    return console.log('Error occurred: ' + err);
-                }
-        
-        var tableArray = [];
-        
-        for (var i = 0; i < data.tracks.items.length; i++) {
-            var result = {
-                artist: data.tracks.items[i].album.artists[0].name,
-                album_name: data.tracks.items[i].album.name,
-                song_name: data.tracks.items[i].name,
-                preview_url: data.tracks.items[i].preview_url
-            }
-        tableArray.push(result);
+    if (search == "spotify-this-song") {
+        // console.log("this works");
+        spotify.search({ type: 'track', query: userInput, limit: 1 }, function (err, data) {
+            if (err) {
+                return console.log('Error occurred: ' + err);
     }
-        var table = cTable.getTable(tableArray);
         
-        console.log(table);
+    var tableArray = [];
+        
+    for (var i = 0; i < data.tracks.items.length; i++) {
+    var result = {
+        artist: data.tracks.items[i].album.artists[0].name,
+        album_name: data.tracks.items[i].album.name,
+        song_name: data.tracks.items[i].name,
+        preview_url: data.tracks.items[i].preview_url
+    }
+    tableArray.push(result);
+    }
+    var table = cTable.getTable(tableArray);
+        
+    console.log(table);
             });
         };
     })
