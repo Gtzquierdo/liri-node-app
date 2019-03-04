@@ -100,6 +100,7 @@ if (process.argv[2] === "concert-this") {
     //split the data from the random.txt file into two array items
     var data;
     data = data.split(","); 
+    
     var search = data[0]; //the command(spotify-this-song, concert-this, or movie-this)
     var userInput = data[1]; //the thing the user is searching for (song title, band name, or movie title)
     // console.log(search + userInput);
