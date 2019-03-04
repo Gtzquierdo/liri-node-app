@@ -23,3 +23,7 @@ LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for mov
         3. *node liri movie-this "name of movie"*
 
 **Friendly reminder to double-check the spelling. Trust me :) It'll save you time and headaches**
+
+**Demo Link Below**
+
+[Google Drive](https://drive.google.com/open?id=1jHzvEVJFpEChZycrrV8tAJxPMSzGuOgC)
