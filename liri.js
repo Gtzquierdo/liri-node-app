@@ -71,6 +71,8 @@ if (process.argv[2] === "concert-this") {
             "Movie Plot: " + response.data.Plot,
             "Actors: " + response.data.Actors
         ].join("\n\n"));
+
+        // As you can see below was my previous code. My update is above this line
         // function (response) {
             
         //         console.log("Title:" + response.data.Title);
