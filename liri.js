@@ -60,21 +60,33 @@ if (process.argv[2] === "concert-this") {
         movieName = "Mr. Nobody";
         queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
         axios.get(queryUrl).then(
-
-        function (response) {
+        
+         showData = [
+            "Title: " + response.data.Title,
+            "Year: " + response.data.Released,
+            "IMDB Rating: " + response.data.imdbRating,
+            "Rotten Tomatoes: " + response.data.Ratings[1].Value,
+            "Country: " + response.data.Country,
+            "Language: " + response.data.Language,
+            "Movie Plot: " + response.data.Plot,
+            "Actors: " + response.data.Actors
+        ].join("\n\n"));
+        // function (response) {
             
-                console.log("Title:" + response.data.Title);
-                console.log("Year:" + response.data.Released);
-                console.log("IMDB Rating:" + response.data.imdbRating);
-                console.log("Rotten Tomatoes:" + response.data.Ratings[1].Value);
-                console.log("Country:" + response.data.Country);
-                console.log("Language:" + response.data.Language);
-                console.log("Movie Plot:" + response.data.Plot);
-                console.log("Actors:" + response.data.Actors);
+        //         console.log("Title:" + response.data.Title);
+        //         console.log("Year: " + response.data.Released);
+        //         console.log("IMDB Rating: " + response.data.imdbRating);
+        //         console.log("Rotten Tomatoes: " + response.data.Ratings[1].Value);
+        //         console.log("Country: " + response.data.Country);
+        //         console.log("Language: " + response.data.Language);
+        //         console.log("Movie Plot: " + response.data.Plot);
+        //         console.log("Actors: " + response.data.Actors);
 
-            });
+        //     });
 } else {
     axios.get(queryUrl).then(
+
+        
         function (response) {
              
             console.log("Title:" + response.data.Title);
