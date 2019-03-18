@@ -72,19 +72,7 @@ if (process.argv[2] === "concert-this") {
             "Actors: " + response.data.Actors
         ].join("\n\n"));
 
-        // As you can see below was my previous code. My update is above this line
-        // function (response) {
-            
-        //         console.log("Title:" + response.data.Title);
-        //         console.log("Year: " + response.data.Released);
-        //         console.log("IMDB Rating: " + response.data.imdbRating);
-        //         console.log("Rotten Tomatoes: " + response.data.Ratings[1].Value);
-        //         console.log("Country: " + response.data.Country);
-        //         console.log("Language: " + response.data.Language);
-        //         console.log("Movie Plot: " + response.data.Plot);
-        //         console.log("Actors: " + response.data.Actors);
-
-        //     });
+     
 } else {
     axios.get(queryUrl).then(
 
